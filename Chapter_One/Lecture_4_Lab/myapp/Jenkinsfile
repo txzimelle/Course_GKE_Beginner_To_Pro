@@ -1,0 +1,27 @@
+pipeline {
+  agent any {
+    stages {
+      stage('Get from source code'){
+        steps {
+          git 'https://github.com/txzimelle/Course_GKE_Beginner_To_Pro/new/master/Chapter_One/Lecture_4_Lab/myapp'
+        }
+      }
+      
+      stage('Build Dockerfile') {
+        steps {
+          sh 'docker build -t sample-app .' 
+        }
+      }
+      
+    
+    
+    }
+  
+  
+  }
+
+
+
+
+
+}
